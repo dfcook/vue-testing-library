@@ -46,16 +46,15 @@ export interface RenderOptions<V extends Vue, S = {}>
   baseElement?: Element
 }
 
-type ConfigurationArgs = [
-  localVue: typeof Vue,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  store: Store<any>,
-  router: Router,
-]
-
 export type ConfigurationCallback<V extends Vue> =
-  | ((...args: ConfigurationArgs) => Partial<ThisTypedMountOptions<V>>)
-  | ((...args: ConfigurationArgs) => void)
+  | ((
+      localVue: typeof Vue,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      store: Store<any>,
+      router: Router,
+    ) => Partial<ThisTypedMountOptions<V>>)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | ((localVue: typeof Vue, store: Store<any>, router: Router) => void)
 
 export function render<V extends Vue>(
   TestComponent: VueClass<V> | ComponentOptions<V>,
