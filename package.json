@@ -15,7 +15,7 @@
     "setup": "npm install && npm run validate -s"
   },
   "engines": {
-    "node": ">10.18"
+    "node": ">=12"
   },
   "files": [
     "types/*.d.ts",
