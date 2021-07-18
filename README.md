@@ -173,6 +173,8 @@ light-weight, simple, and understandable.
 
 ## Typings
 
+_Please note that TypeScript 4.X is required._
+
 The TypeScript type definitions are in the [types][types-directory] directory.
 
 ## ESLint support
